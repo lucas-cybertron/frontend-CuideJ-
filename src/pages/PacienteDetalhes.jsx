@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { mockApi } from "../services/mockApi";
-
 import { Card } from "../components/Card";
 import { Button } from "../components/Button"
 import { LoadingSpinner } from "../components/LoadingSpinner";
