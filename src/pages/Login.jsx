@@ -67,7 +67,7 @@ export const Login = () =>{
                 </form>
                 <div className="mt-6 text-center space-y-2">
                     <p className="text-white ">
-                        Não possui conta?<Link to = "/register" className=" ml-1 text-dark/70 font-bold hover:text-dark">
+                        Não possui conta?<Link to = "/register" className=" ml-1 text-dark/80 font-bold hover:text-dark">
                          Cadastre-se
                     </Link>
                     </p>

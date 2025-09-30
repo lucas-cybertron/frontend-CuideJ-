@@ -21,7 +21,7 @@ import { Relatorios } from "../pages/relatorios";
 import { Solicitacoes } from "../pages/solicitacoes";
 import { Pacientes } from "../pages/Pacientes";
 import { PacienteDetalhes } from "../pages/PacienteDetalhes";
-import { SessaoDetalhes } from "../pages/SessãoDetalhes";
+import { SessaoDetalhes } from "../pages/SessaoDetalhes";
 
 // Rotas privadas
 const ProtectedRoute = ({ children }) => {
@@ -150,7 +150,7 @@ export const AppRoutes = () => {
           }
         />
         <Route
-          path="/sessao/:sessionid"
+          path="/sessao/:sessionId"
           element={
             <ProtectedRoute>
               <SessaoDetalhes/>

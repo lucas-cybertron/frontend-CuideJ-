@@ -92,7 +92,7 @@ export const DashboardPsicologo = () => {
       {/* Mensagem para psicólogos novos */}
       {isNewPsychologist && (
         <div className="bg-[#88C1D3]/30 rounded-lg shadow-md p-6 text-center border-2 border-dashed border-light/30">
-          <Users className="w-16 h-16 text-light/50 mx-auto mb-4" />
+          <Users className="w-16 h-16 text-white mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-dark mb-2">Bem-vindo ao Lunysse!</h3>
           <p className="text-dark/70 mb-4">
             Você é novo por aqui. Seus pacientes e agendamentos aparecerão neste dashboard
@@ -107,27 +107,27 @@ export const DashboardPsicologo = () => {
       {/* KPIs */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
       <div className="bg-[#88C1D3]/30 rounded-lg shadow-md p-6 text-center">
-        <Users className="w-8 h-8 text-light mx-auto mb-2" />
+        <Users className="w-8 h-8 text-white mx-auto mb-2" />
         <h3 className="text-2xl font-bold text-dark">{totalPatients}</h3>
-        <p className="text-dark/70">Pacientes Ativos</p>
+        <p className="text-white">Pacientes Ativos</p>
       </div>
 
       <div className="bg-[#88C1D3]/30 rounded-lg shadow-md p-6 text-center">
-        <Calendar className="w-8 h-8 text-accent mx-auto mb-2" />
+        <Calendar className="w-8 h-8 text-white mx-auto mb-2" />
         <h3 className="text-2xl font-bold text-dark">{todayAppointments.length}</h3>
-        <p className="text-dark/70">Sessões Hoje</p>
+        <p className="text-white">Sessões Hoje</p>
       </div>
 
       <div className="bg-[#88C1D3]/30 rounded-lg shadow-md p-6 text-center">
-        <CheckCheck className="w-8 h-8 text-medium mx-auto mb-2" />
+        <CheckCheck className="w-8 h-8 text-white mx-auto mb-2" />
         <h3 className="text-2xl font-bold text-dark">{completedSessions}</h3>
-        <p className="text-dark/70">Sessões Concluídas</p>
+        <p className="text-white">Sessões Concluídas</p>
       </div>
 
       <div className="bg-[#88C1D3]/30 rounded-lg shadow-md p-6 text-center">
-        <Bell className="w-8 h-8 text-orange-500 mx-auto mb-2" />
+        <Bell className="w-8 h-8 text-white mx-auto mb-2" />
         <h3 className="text-2xl font-bold text-dark">{pendingRequests}</h3>
-        <p className="text-dark/70">Solicitações Pendentes</p>
+        <p className="text-white">Solicitações Pendentes</p>
       </div>
     </div>
 

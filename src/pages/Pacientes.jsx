@@ -57,7 +57,7 @@ export const Pacientes = () => {
           patients.map(patient => (
             <Card
               key={patient.id}
-              className="cursor-pointer hover:shadow-lg transition-shadow p-6 bg-gradient-to-r from-indig-100 to-purple-100"
+              className="cursor-pointer hover:shadow-lg transition-shadow p-6 bg-[#88C1D3]/30"
               onClick={() => navigate(`/pacientes/${patient.id}`)}
             >
               <div className="flex items-start gap-6">
@@ -77,10 +77,10 @@ export const Pacientes = () => {
                 </div>
  
                 {/* INFORMAÇÕES */}
-                <div className="grid grid-cols-3 gap-6 w-full">
+                <div className="grid grid-cols-3 gap-6 w-full ">
                   {/* Coluna 1 */}
                   <div>
-                    <h3 className="text-lg font-bold text-dark">{patient.name}</h3>
+                    <h3 className="text-lg font-bold text-white">{patient.name}</h3>
                     <p className="text-sm text-dark/60">Paciente</p>
  
                     <div className="mt-3 space-y-1">
@@ -94,7 +94,7 @@ export const Pacientes = () => {
                   </div>
  
                   {/* Coluna 2 */}
-                  <div className="space-y-1">
+                  <div className="space-y-1 mt-15">
                     <p className="text-sm text-dark">
                       <span className="font-bold">Data de Nascimento: </span><br/>
                       {patient.birthDate}
@@ -106,7 +106,7 @@ export const Pacientes = () => {
                   </div>
  
                   {/* Coluna 3 */}
-                  <div className="space-y-1">
+                  <div className="space-y-1 mt-15">
                     <p className="text-sm text-dark">
                       <span className="font-bold">Telefone: </span><br/>{patient.phone}
                     </p>
@@ -116,8 +116,8 @@ export const Pacientes = () => {
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-bold ${
                           patient.status === "Em tratamento"
-                            ? "bg-[#ffbd59] text-dark"
-                            : "bg-[#58c470] text-dark"
+                            ? "bg-[#eec409c9] text-dark"
+                            : "bg-[#09fd3edc] text-dark"
                         }`}
                       >
                         {patient.status}

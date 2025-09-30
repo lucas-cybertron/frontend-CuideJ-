@@ -8,75 +8,74 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { ArrowLeft, Clock, Calendar, User, FileText, Edit3, Save, X } from "lucide-react";
 
 export const SessaoDetalhes = () => {
-    const {sessionId} = useParams();
-    const navigate = useNavigate();
-    const {user} = useAuth();
-    const [session, setSession] = useState(null);
-    const [patient, setPatient] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [editing, setEditing] = useState(false);
-    const [editNotes, setEditNotes] = useState('');
-    const [editReport, setEditReport] = useState('');
-    const [editStatus, setEditStatus] = useState('');
+  const { sessionId } = useParams ();
+  const navigate = useNavigate ();
+  const { user } = useAuth ();
+  const [session, setSession] = useState (null);
+  const [patient, setPatient] = useState (null);
+  const [loading, setLoading] = useState (true);
+  const [editing, setEditing] = useState (false);
+  const [editNotes, setEditNotes] = useState ('');
+  const [editReport, setEditReport] = useState ('');
+  const [editStatus, setEditStatus] = useState ('');
+  {/* Teste */}
+  useEffect(() =>{
+      const loadSessionData = async () => {
+          try{
+              const sessionData = await mockApi.getSessionDetails(parseInt(sessionId));
+              setSession(sessionData);
+              setEditNotes(sessionData.notes || '');
+              setEditReport(sessionData.fullReport || '');
+              setEditStatus(sessionData.status);
 
-    useEffect(() =>{
-        const loadSessionData = async () => {
-            try {
-                const sessionData = await mockApi.getSessionDetails(parseInt(sessionId));
-                setSession(sessionData);
-                setEditNotes(sessionData.notes || '');
-                setEditReport(sessionData.fullReport ||'');
-                setEditStatus(sessionData.status); 
+              const patients = await mockApi.getPatients(user.id);
+              const patientData = patients.find(p => p.id === sessionData.patientId);
+              setPatient(patientData);
+          }catch(error) {
+              console.error('Erro ao carregar dados da sessão', error);
+              navigate('/pacientes');
+          }finally{
+              setLoading(false);
+          }
+      };
 
-                const patients = await mockApi.getPatients(user.id);
-                const patientData = patients.find(p=> p.id === sessionData.sessionData.patientId);
-                setPatient(patientData);
-            } catch (error) {
-                console.error('erro ao carregar dados da sessão', error);
-                navigate('/pacientes');
-            }finally{
-                setLoading(false);
-            }
-        };
+      loadSessionData();
+      }, [sessionId, user.id, navigate]);
+      const handleSave = async () => {
+          try{
+              await mockApi.updateSessionStatus(session.id, editStatus);
+              await mockApi.updateSessionNotes(session.id, editNotes, editReport);
+              setSession({
+                  ...session,
+                  status: editStatus,
+                  notes: editNotes,
+                  fullReport: editReport
+              });
+              setEditing(false);
+          } catch(error) {
+              console.error('Erro ao salvar alterações', error);
+             
+          }
+     
+      }
+      const handleCancel = () => {
+          setEditNotes(session.edit || '');
+          setEditReport(session.fullReport || '');
+          setEditStatus(session.status);
+          setEditing(false);
+      }
+      if(loading) return <LoadingSpinner size='lg'/>;
+      if(!session || !patient) return null;
 
-        loadSessionData();
-    }, [sessionId,user.id, navigate]);
+      const statusOptions = [
+          {value: 'agendado', label: 'Agendado', color: 'bg-blue-100 text-dark'},
+          {value: 'iniciado', label: 'Iniciado', color: 'bg-yellow-100 text-dark'},
+          {value: 'concluido', label: 'Concluído', color: 'bg-green-100 text-dark'},
+          {value: 'cancelado', label: 'Cancelado', color: 'bg-red-100 text-dark'}
+      ];
 
-    const handleSave = async () => {
-        try {
-            await mockApi.updateSessionStatus(session.id, editStatus);
-            await mockApi.updateSessionNotes(session.id, editNotes, editReport);
+      const currentStatus = statusOptions.find(s => s.value === session.status);
 
-            setSession({
-                ...session,
-                status: editStatus,
-                notes: editNotes,
-                fullReport: editReport
-            });
-
-            setEditing(false);
-        } catch (error) {
-            console.error('erro ao salvar as alterações', error);
-        }
-    };
-
-    const handleCancel = () =>{
-        setEditNotes(session.edit || '');
-        setEditReport(session.fullReport || '');
-        setEditStatus(session.status || '');
-        setEditing(false);
-    };
-
-    if(loading) return <LoadingSpinner size= "lg"/>
-    if(!session || !patient) return null;
-
-    const statusOption = [
-        {value: 'agendado', label: 'agendado', color: 'bg-blue-100 text-dark' },
-        {value: 'iniciado', label: 'iniciado', color: 'bg-yellow-100 text-dark' },
-        {value: 'concluido', label: 'concluido', color: 'bg-green-100 text-dark' },
-        {value: 'Cancelado', label: 'Cancelado', color:'bg-red-100 text-dark'}
-    ]
-    const currentStatus = statusOption.find(s => s.value === session.status)
     return (
         <div className="space-y-6">
         {/* Header */}
@@ -124,8 +123,8 @@ export const SessaoDetalhes = () => {
         </div>
    
         {/* Informações da Sessão */}
-        <Card>
-          <div className="space-y-6">
+        <Card className="bg-[#88C1D3]/30">
+          <div className="space-y-6 ">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold text-dark">Sessão #{session.id}</h2>
@@ -182,7 +181,7 @@ export const SessaoDetalhes = () => {
         </Card>
    
         {/* Anotações Rápidas */}
-        <Card>
+        <Card className="bg-[#88C1D3]/30">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-dark" />
@@ -209,7 +208,7 @@ export const SessaoDetalhes = () => {
         </Card>
    
         {/* Relatório Completo */}
-        <Card>
+        <Card className="bg-[#88C1D3]/30">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-dark" />

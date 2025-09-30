@@ -27,7 +27,7 @@ const PatientInfo = ({ patient }) => {
         { icon: CheckCircle, label: 'Status do tratamento', value: patient.status, isStatus: true }
     ]
     return (
-        <Card>
+        <Card className="bg-[#88C1D3]/30">
             <div className="space-x-6">
                 <div className="flex items-center gap-4">
                     <div className="w-20 h-20 bg-gradient-to-br from-light to-accent rounded-full flex items-center justify-center">
@@ -139,7 +139,7 @@ const Header = ({ onBack, title }) => (
     );
      
     const SessionsCard = ({ sessions, showForm, formData, onFormChange, onFormSubmit, onFormCancel, onShowForm, onStatusUpdate, updatingSessions, creatingSession, navigate }) => (
-    <Card>
+    <Card className="bg-[#88C1D3]/30">
     <div className="space-y-4">
     <div className="flex justify-between items-center">
     <h3 className="text-xl font-bold text-dark flex items-center gap-2">

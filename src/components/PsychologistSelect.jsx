@@ -2,7 +2,7 @@
 
 export const PsychologistSelect = ({ psychologists, selected, onChange }) => {
     return (
-        <div>
+        <div className="">
             <label className="flex items-center gap-2 text-lg font-medium text-dark mb-3">
                
                 Escolha o Psicologo

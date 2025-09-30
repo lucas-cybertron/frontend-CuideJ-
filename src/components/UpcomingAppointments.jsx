@@ -7,9 +7,9 @@ export const UpcomingAppointments = ({ appointments = [], patients = [], totalPa
       <div className="bg-[#88C1D3]/30 rounded-lg shadow-md p-6">
         <h2 className="text-xl font-semibold text-white mb-4">Próximos Agendamentos</h2>
         <div className="text-center py-8">
-          <Calendar className="w-16 h-16 text-dark/30 mx-auto mb-4" />
+          <Calendar className="w-16 h-16 text-white mx-auto mb-4" />
           <p className="text-dark/70 mb-2">Nenhum agendamento futuro encontrado.</p>
-          <p className="text-sm text-dark/50">
+          <p className="text-sm text-dark/60">
             {totalPatients === 0
               ? "Você ainda não possui pacientes cadastrados."
               : "Todos os agendamentos estão em dia!"}

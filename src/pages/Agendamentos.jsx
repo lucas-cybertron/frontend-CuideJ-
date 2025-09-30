@@ -192,7 +192,7 @@ export const Agendamento = () => {
       {/* COMPONENTE REUTILIZÁVEL: Card aplica estilos consistentes */}
       {/* GLASSMORPHISM: Efeito visual moderno com transparência e blur */}
       {/* PORQUE: Agrupa visualmente o formulário e melhora a hierarquia */}
-      <Card>
+      <Card className='bg-[#88C1D3]/30'>
         {/* ===== FORMULÁRIO HTML ===== */}
         {/* EVENT BINDING: onSubmit conecta evento HTML com função JavaScript */}
         {/* LAYOUT: space-y-6 = espaçamento vertical de 1.5rem entre campos */}
@@ -222,7 +222,7 @@ export const Agendamento = () => {
           {/* OPERADOR &&: se selectedPsychologist for truthy, renderiza o JSX */}
           {/* PORQUE: Feedback contextual - mostra info relevante apenas quando necessário */}
           {selectedPsychologist && (
-            <Card className="bg-blue-50"> {/* Card aninhado com fundo azul claro */}
+            <Card className="bg-[#88C1D3]/30"> {/* Card aninhado com fundo azul claro */}
               {/* TÍTULO DA SEÇÃO */}
               <h3 className="font-semibold text-dark mb-2">Informações Importantes</h3>
               
