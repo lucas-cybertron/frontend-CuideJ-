@@ -69,10 +69,10 @@
 body {
   font-family: 'Hanken Grotesk', 'Nunito Sans', 'Roboto', sans-serif; /* Fontes */
   font-weight: 500; /* Peso médio */
-  background: linear-gradient(
-    var(--color-light) 0%,         /* Começa azul claro */
-    var(--color-medium) 50%,       /* Vai para azul médio */
-    var(--color-background) 100%   /* Termina bege claro */
+  background: linear-gradient(40deg,
+    var(--color-medium) -10%,         /* Começa azul claro */
+    var(--color-light) 50%,       /* Vai para azul médio */
+    var(--color-medium) 200%   /* Termina bege claro */
   );
   min-height: 100vh; /* Sempre ocupa altura mínima da tela */
 }

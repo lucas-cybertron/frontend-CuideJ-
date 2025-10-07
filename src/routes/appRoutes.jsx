@@ -32,9 +32,11 @@ const ProtectedRoute = ({ children }) => {
 
   return (
     <div className="min-h-screen flex">
-      <Sidebar />
-      <main className="w-full max-w-screen-xl mx-auto">{children}</main>
-    </div>
+    <Sidebar /> {/* Sidebar lateral sempre visível */}
+    <main className="flex-1 lg:ml-64 p-8">
+      {children} {/* Conteúdo da página protegida */}
+    </main>
+  </div>
   );
 };
 

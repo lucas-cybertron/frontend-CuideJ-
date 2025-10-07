@@ -8,7 +8,7 @@ import { ClipboardClock, Cross } from 'lucide-react';
 // Página inicial (Home)
 export const Home = () => {
   return (
-    <div >
+    <div className = "mt-10" >
       {/* ================= HERO SECTION ================= */}
       <section className="min-h-screen flex items-center justify-center text-center ">
         <div>
