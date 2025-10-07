@@ -78,7 +78,7 @@ const SessionForm = ({ data, onChange, onSubmit, onCancel, loading }) => {
             <select
               value={data.time}
               onChange={(e) => onChange({ ...data, time: e.target.value })}
-              className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-light"
+              className="w-full px-3 py-2 bg-white  border border-white/20 rounded-lg text-dark font-medium focus:outline-none focus:ring-2 focus:ring-light"
               required
             >
               <option value="">Selecione o horário</option>
@@ -97,7 +97,7 @@ const SessionForm = ({ data, onChange, onSubmit, onCancel, loading }) => {
           <select
             value={data.duration}
             onChange={(e) => onChange({ ...data, duration: parseInt(e.target.value) })}
-            className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-light"
+            className="w-full px-3 py-2 bg-white border border-white/20 rounded-lg font-medium  text-dark focus:outline-none focus:ring-2 focus:ring-light"
           >
             {durations.map(duration => <option key={duration} value={duration}>{duration} minutos</option>)}
           </select>
