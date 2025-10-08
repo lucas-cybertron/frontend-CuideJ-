@@ -45,7 +45,7 @@ const PublicRoute = ({ children }) => {
   return (
     <div className="min-h-screen">
       <PublicNavbar />
-      <main className="w-full ">{children}</main>
+      <main className="flex-grow px-4 pt-24 sm:pt-28" >{children}</main>
     </div>
   );
 };

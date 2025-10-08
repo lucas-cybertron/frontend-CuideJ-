@@ -54,8 +54,8 @@ export const Register = () => {
   };
  
   return (
-    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 bg-[#e9f9ff]">
-      <Card className="bg-light/45 w-full max-w-md">
+    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 ">
+      <Card className="bg-[#88C1D3]/30 w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-dark mb-2">Criar Conta</h1>
         </div>

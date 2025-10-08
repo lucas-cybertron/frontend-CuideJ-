@@ -32,8 +32,8 @@ export const Login = () =>{
     };
  
     return(
-        <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 bg-[#e9f9ff]">
-            <Card className= "w-full  max-w-md bg-light/45">
+        <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 ">
+            <Card className= "w-full  max-w-md bg-[#88C1D3]/30">
                 {/*Cabeçalho */}
                 <div className="text-center mb-8">
                     <h1 className="text-4xl font-bold text-dark mb-2">Login</h1>
