@@ -24,9 +24,9 @@ export const PublicNavbar = () => {
             <img
               src="/logo.png"
               alt="Portal Turismo"
-              className="w-8 h-8 object-contain"
+              className="w-20 h-20 object-contain"
             />
-            <span className="text-xl font-bold text-accent">PortalTurismo</span>
+            <h1 className="text-2xl font-bold text-accent">CuideJá</h1>            
           </div>
 
           {/* LINKS DESKTOP */}
